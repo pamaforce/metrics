@@ -52,18 +52,13 @@ jobs:
           plugin_fortune: yes
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.languages.indepth.svg
+          filename: metrics.plugin.16personalities.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          plugin_languages: yes
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot
-          plugin_languages_skipped: pamaforce/dify
-          plugin_languages_indepth: yes
-          plugin_languages_details: lines, percentage
-          plugin_languages_limit: 6
-          plugin_languages_analysis_timeout: 20
+          plugin_16personalities: yes
+          plugin_16personalities_url: ${{ secrets.SIXTEEN_PERSONALITIES_URL }}
+          plugin_16personalities_sections: personality, traits
+          plugin_16personalities_scores: no
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.recent.svg
@@ -79,10 +74,15 @@ jobs:
           plugin_languages_limit: 4
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.16personalities.svg
+          filename: metrics.plugin.languages.indepth.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          plugin_16personalities: yes
-          plugin_16personalities_url: ${{ secrets.SIXTEEN_PERSONALITIES_URL }}
-          plugin_16personalities_sections: personality, traits
-          plugin_16personalities_scores: no
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugin_languages_skipped: pamaforce/dify
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, percentage
+          plugin_languages_limit: 6
+          plugin_languages_analysis_timeout: 20
