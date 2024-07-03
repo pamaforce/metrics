@@ -59,10 +59,11 @@ jobs:
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
             gnuplot
+          plugin_languages_skipped: pamaforce/dify
           plugin_languages_indepth: yes
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 6
-          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout: 60
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.recent.svg
@@ -72,6 +73,7 @@ jobs:
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
             gnuplot
+          plugin_languages_skipped: pamaforce/dify
           plugin_languages_sections: recently-used
           plugin_languages_details: line, percentage
           plugin_languages_limit: 4
