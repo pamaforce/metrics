@@ -63,7 +63,7 @@ jobs:
           plugin_languages_indepth: yes
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 6
-          plugin_languages_analysis_timeout: 60
+          plugin_languages_analysis_timeout: 20
       - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.recent.svg
@@ -77,8 +77,7 @@ jobs:
           plugin_languages_sections: recently-used
           plugin_languages_details: line, percentage
           plugin_languages_limit: 4
-      - name: MBTI Personality profile
-        uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.16personalities.svg
           token: ${{ secrets.METRICS_TOKEN }}
